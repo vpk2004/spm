@@ -1,0 +1,701 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Workshop Services | SPM Lorry Workshop</title>
+     <link rel="stylesheet" href="style.css">
+  <meta name="description"
+    content="Explore heavy commercial vehicle repair, engine servicing, brake repair, electrical work, fabrication and roadside breakdown assistance at SPM Lorry Workshop.">
+
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #082b59;
+      --navy-dark: #061d3d;
+      --blue: #104783;
+      --yellow: #ffd400;
+      --white: #ffffff;
+      --light: #f3f7fc;
+      --text: #183454;
+      --muted: #64748b;
+      --border: #dce6f2;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ===== MAIN SECTION ===== */
+    .workshop-services {
+      padding: 80px 6%;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255, 212, 0, 0.10),
+          transparent 28%
+        ),
+        var(--light);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    /* ===== SECTION HEADER ===== */
+    .section-header {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 15px;
+      background: #fff4ad;
+      color: var(--navy);
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .section-header h1 {
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .section-header h1 span {
+      color: #c49d00;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .service-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 22px;
+      padding: 10px 18px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .service-count strong {
+      color: var(--yellow);
+      font-size: 18px;
+    }
+
+    /* ===== CATEGORY GRID ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    /* ===== CATEGORY CARD ===== */
+    .service-category {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(8, 43, 89, 0.055);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .service-category:hover {
+      transform: translateY(-5px);
+      border-color: #c3d4e9;
+      box-shadow: 0 16px 35px rgba(8, 43, 89, 0.12);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 22px 24px;
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 4px solid var(--yellow);
+    }
+
+    .category-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 212, 0, 0.13);
+      border: 1px solid rgba(255, 212, 0, 0.4);
+      border-radius: 12px;
+      font-size: 25px;
+    }
+
+    .category-heading {
+      flex: 1;
+    }
+
+    .category-heading h2 {
+      font-size: 17px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .category-heading p {
+      margin-top: 4px;
+      color: #d2e2f7;
+      font-size: 12px;
+    }
+
+    .category-number {
+      color: var(--yellow);
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    /* ===== SERVICE LIST ===== */
+    .service-list {
+      list-style: none;
+      padding: 13px 24px 20px;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid #edf1f7;
+      color: var(--text);
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .service-list li:last-child {
+      border-bottom: none;
+    }
+
+    .service-list li:hover {
+      color: var(--blue);
+    }
+
+    .service-check {
+      width: 21px;
+      height: 21px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+      background: #fff6bf;
+      color: var(--navy);
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    /* ===== CONTACT BANNER ===== */
+    .workshop-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      margin-top: 42px;
+      padding: 32px 35px;
+      background: var(--navy);
+      border-left: 6px solid var(--yellow);
+      border-radius: 14px;
+      color: var(--white);
+    }
+
+    .cta-content h2 {
+      margin-bottom: 8px;
+      font-size: clamp(21px, 3vw, 27px);
+      line-height: 1.3;
+    }
+
+    .cta-content h2 span {
+      color: var(--yellow);
+    }
+
+    .cta-content p {
+      max-width: 600px;
+      color: #d2e2f7;
+      font-size: 14px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      flex-shrink: 0;
+      padding: 14px 22px;
+      background: var(--yellow);
+      color: var(--navy-dark);
+      text-decoration: none;
+      border: 2px solid var(--yellow);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .cta-button:hover {
+      background: transparent;
+      color: var(--yellow);
+    }
+
+    /* ===== TABLET ===== */
+    @media (max-width: 900px) {
+      .workshop-services {
+        padding: 65px 4%;
+      }
+
+      .services-grid {
+        gap: 18px;
+      }
+
+      .category-header {
+        padding: 19px;
+        gap: 12px;
+      }
+
+      .category-heading h2 {
+        font-size: 15px;
+      }
+
+      .service-list {
+        padding: 12px 19px 17px;
+      }
+
+      .service-list li {
+        font-size: 13px;
+      }
+
+      .category-number {
+        font-size: 12px;
+      }
+
+      .workshop-cta {
+        padding: 27px;
+      }
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 600px) {
+      .workshop-services {
+        padding: 48px 16px;
+      }
+
+      .section-header {
+        margin-bottom: 32px;
+      }
+
+      .section-header h1 {
+        font-size: 30px;
+      }
+
+      .section-header p {
+        font-size: 14px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .category-header {
+        padding: 20px;
+      }
+
+      .category-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+      }
+
+      .category-heading h2 {
+        font-size: 16px;
+      }
+
+      .category-number {
+        font-size: 12px;
+      }
+
+      .service-list {
+        padding: 12px 20px 17px;
+      }
+
+      .service-list li {
+        font-size: 14px;
+        padding: 12px 0;
+      }
+
+      .workshop-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 25px 22px;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
+    }
+
+    /* ===== SMALL MOBILE ===== */
+    @media (max-width: 360px) {
+      .workshop-services {
+        padding: 38px 12px;
+      }
+
+      .section-header h1 {
+        font-size: 26px;
+      }
+
+      .category-header {
+        gap: 10px;
+        padding: 16px;
+      }
+
+      .category-heading h2 {
+        font-size: 14px;
+      }
+
+      .category-heading p {
+        font-size: 11px;
+      }
+
+      .service-list {
+        padding-right: 16px;
+        padding-left: 16px;
+      }
+
+      .service-list li {
+        font-size: 13px;
+      }
+    }
+
+    /* ===== ACCESSIBILITY ===== */
+    a:focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+   <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>HEAVY VEHICLE SERVICE · WORKSHOP · TRANSPORT</span>
+      <div>
+        <a href="tel:+919443896946">Call: +91 94438 96946</a>
+        <span class="top-divider"> | </span>
+        <a href="https://www.google.com/maps/place/S.P.M+Lorry+Workshop/@11.4168115,77.4338669,18z/"
+           target="_blank" rel="noopener noreferrer">Get Location</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <a class="brand" href="#home" aria-label="SPM home">
+        <span class="brand-mark">SPM</span>
+        <span class="brand-text">
+          LORRY WORKSHOP
+          <small>&amp; TRANSPORT</small>
+        </span>
+      </a>
+
+      <div class="site-options" aria-label="Website options">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+          🌙 Dark mode
+        </button>
+
+        <label class="language-label" for="languageSelect">Language</label>
+        <select id="languageSelect" aria-label="Choose language">
+          <option value="en">English</option>
+          <option value="ta">தமிழ்</option>
+        </select>
+      </div>
+
+      <button class="menu-toggle" type="button"
+              aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="#about">About Us</a>
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="btn btn-small nav-cta" href="#contact">
+          Get in Touch <span>↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+     <!-- WORKSHOP SERVICE CATEGORIES -->
+        <div class="services-grid">
+
+          <!-- 01 ENGINE AND TRANSMISSION -->
+          <article class="service-category">
+            <header class="category-header">
+              <div class="category-icon" aria-hidden="true">⚙️</div>
+
+              <div class="category-heading">
+                <h2>Engine and Transmission</h2>
+                <p>Powertrain repair and servicing</p>
+              </div>
+
+              
+            </header>
+
+            <ol class="service-list" start="1">
+              <li><span class="service-check">✓</span><span>Heavy Commercial Vehicle Repair</span></li>
+              <li><span class="service-check">✓</span><span>Lorry Engine Repair</span></li>
+              <li><span class="service-check">✓</span><span>Engine Overhauling and Reconditioning</span></li>
+              <li><span class="service-check">✓</span><span>Gearbox Repair and Servicing</span></li>
+              <li><span class="service-check">✓</span><span>Clutch Repair and Replacement</span></li>
+              <li><span class="service-check">✓</span><span>Differential Repair and Servicing</span></li>
+              <li><span class="service-check">✓</span><span>Axle Repair and Replacement</span></li>
+            </ol>
+          </article>
+
+          <!-- 02 BRAKING STEERING SUSPENSION -->
+          <article class="service-category">
+            <header class="category-header">
+              <div class="category-icon" aria-hidden="true">🛞</div>
+
+              <div class="category-heading">
+                <h2>Braking, Steering and Suspension</h2>
+                <p>Control, handling and road safety</p>
+              </div>
+
+             
+            </header>
+
+            <ol class="service-list" start="8">
+              <li><span class="service-check">✓</span><span>Brake System Repair and Servicing</span></li>
+              <li><span class="service-check">✓</span><span>Air Brake System Repair</span></li>
+              <li><span class="service-check">✓</span><span>Suspension System Repair</span></li>
+              <li><span class="service-check">✓</span><span>Steering System Repair</span></li>
+              <li><span class="service-check">✓</span><span>Wheel Alignment and Balancing</span></li>
+            </ol>
+          </article>
+
+          <!-- 03 COOLING ELECTRICAL FUEL -->
+          <article class="service-category">
+            <header class="category-header">
+              <div class="category-icon" aria-hidden="true">🔋</div>
+
+              <div class="category-heading">
+                <h2>Cooling, Electrical and Fuel</h2>
+                <p>Electrical and engine support systems</p>
+              </div>
+
+            
+            </header>
+
+            <ol class="service-list" start="13">
+              <li><span class="service-check">✓</span><span>Radiator and Cooling System Repair</span></li>
+              <li><span class="service-check">✓</span><span>Vehicle Electrical System Repair</span></li>
+              <li><span class="service-check">✓</span><span>Battery Testing and Replacement</span></li>
+              <li><span class="service-check">✓</span><span>Starter Motor and Alternator Repair</span></li>
+              <li><span class="service-check">✓</span><span>Diesel Fuel Injection System Servicing</span></li>
+              <li><span class="service-check">✓</span><span>Fuel Pump Repair and Servicing</span></li>
+              <li><span class="service-check">✓</span><span>Air Compressor Repair and Servicing</span></li>
+            </ol>
+          </article>
+
+          <!-- 04 HYDRAULIC CHASSIS FABRICATION -->
+          <article class="service-category">
+            <header class="category-header">
+              <div class="category-icon" aria-hidden="true">🔧</div>
+
+              <div class="category-heading">
+                <h2>Hydraulic, Chassis and Fabrication</h2>
+                <p>Structural repair and metalwork</p>
+              </div>
+
+           
+            </header>
+
+            <ol class="service-list" start="20">
+              <li><span class="service-check">✓</span><span>Hydraulic System Repair</span></li>
+              <li><span class="service-check">✓</span><span>Chassis Repair and Reinforcement</span></li>
+              <li><span class="service-check">✓</span><span>Welding and Metal Fabrication</span></li>
+            </ol>
+          </article>
+
+          <!-- 05 TYRES AND GENERAL MAINTENANCE -->
+          <article class="service-category">
+            <header class="category-header">
+              <div class="category-icon" aria-hidden="true">🛠️</div>
+
+              <div class="category-heading">
+                <h2>Tyres and General Maintenance</h2>
+                <p>Routine care and preventive service</p>
+              </div>
+
+            
+            </header>
+
+            <ol class="service-list" start="23">
+              <li><span class="service-check">✓</span><span>Tyre Replacement and Puncture Repair</span></li>
+              <li><span class="service-check">✓</span><span>Engine Oil Change and Lubrication</span></li>
+              <li><span class="service-check">✓</span><span>Preventive Maintenance and Inspection</span></li>
+              <li><span class="service-check">✓</span><span>Periodic Lorry Servicing</span></li>
+              <li><span class="service-check">✓</span><span>Spare Parts Replacement</span></li>
+            </ol>
+          </article>
+
+          <!-- 06 DIAGNOSTICS AND ROADSIDE SUPPORT -->
+          <article class="service-category">
+            <header class="category-header">
+              <div class="category-icon" aria-hidden="true">🚚</div>
+
+              <div class="category-heading">
+                <h2>Diagnostics and Roadside Support</h2>
+                <p>Fault finding and breakdown assistance</p>
+              </div>
+
+            
+            </header>
+
+            <ol class="service-list" start="28">
+              <li><span class="service-check">✓</span><span>Vehicle Inspection and Fault Diagnosis</span></li>
+              <li><span class="service-check">✓</span><span>On-Site Lorry Repair</span></li>
+              <li><span class="service-check">✓</span><span>Heavy Vehicle Breakdown Assistance</span></li>
+            </ol>
+          </article>
+
+        </div>
+
+        <!-- CONTACT / ENQUIRY BANNER -->
+        <div class="workshop-cta">
+          <div class="cta-content">
+            <h2>Need Help With Your <span>Lorry?</span></h2>
+            <p>
+              Contact SPM Lorry Workshop for service enquiries,
+              repair assistance and heavy vehicle maintenance.
+            </p>
+          </div>
+
+          <!-- Replace the phone number with your WhatsApp number.
+               Use country code and digits only, without + or spaces. -->
+          <a
+            class="cta-button"
+            href="https://wa.me/91YOURNUMBER"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contact SPM Lorry Workshop on WhatsApp">
+            <span aria-hidden="true">✆</span>
+            Contact on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+    
+    <footer class="footer" id="footer">
+        <div class="container footer-main">
+
+            <a class="brand footer-brand" href="#home" aria-label="SPM home">
+            <span class="brand-mark">SPM</span>
+
+            <span class="brand-text">
+                LORRY WORKSHOP
+                <small>&amp; TRANSPORT</small>
+            </span>
+            </a>
+
+            <p class="footer-description">
+            Workshop and transport enquiries.
+            <br>
+            Keeping your business moving.
+            </p>
+
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="index.html">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
+
+        <div class="container footer-bottom">
+            <span>
+            © <span id="year"></span> SPM Lorry Workshop &amp; Transport.
+            All rights reserved.
+            </span>
+
+            <a href="#home">Back to Top ↑</a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+    </body>
+    </html>
+
+
+</body>
+</html>
