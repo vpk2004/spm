@@ -1,13 +1,14 @@
 /* =========================================================
    SPM LORRY SERVICES
-   BLUE & YELLOW GLASS THEME
+   BLUE & YELLOW THEME
    Main Stylesheet: style.css
-   ========================================================= */
+   Organized & Consolidated Version
+========================================================= */
 
 
 /* =========================================================
    01. ROOT VARIABLES & GLOBAL RESET
-   ========================================================= */
+========================================================= */
 
 :root {
   --navy: #082b59;
@@ -23,10 +24,14 @@
   --font: 'DM Sans', sans-serif;
   --heading: 'Manrope', sans-serif;
 
-  --shadow: 0 18px 50px rgba(8, 43, 89, .12);
+  --shadow: 0 18px 50px rgba(8, 43, 89, 0.12);
+  --radius: 16px;
+  --transition: 0.25s ease;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -55,6 +60,15 @@ textarea {
   font: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
 .container {
   width: min(1200px, calc(100% - 48px));
   margin-inline: auto;
@@ -63,13 +77,13 @@ textarea {
 
 /* =========================================================
    02. TOP INFORMATION BAR
-   ========================================================= */
+========================================================= */
 
 .topbar {
   background: var(--navy);
   color: #eaf2ff;
   font-size: 12px;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 }
 
 .topbar-inner {
@@ -86,23 +100,23 @@ textarea {
 }
 
 .top-divider {
-  opacity: .45;
-  margin: 0 8px;
+  opacity: 0.45;
+  margin-inline: 8px;
 }
 
 
 /* =========================================================
    03. HEADER, BRAND & NAVIGATION
-   ========================================================= */
+========================================================= */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(241, 246, 255, .86);
+  background: rgba(241, 246, 255, 0.92);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(8, 43, 89, .14);
+  border-bottom: 1px solid rgba(8, 43, 89, 0.14);
 }
 
 .nav-wrap {
@@ -129,20 +143,20 @@ textarea {
   color: var(--navy);
   font: 800 20px var(--heading);
   border-radius: 8px;
-  box-shadow: 0 5px 18px rgba(255, 212, 0, .25);
+  box-shadow: 0 5px 18px rgba(255, 212, 0, 0.25);
 }
 
 .brand-text {
   font: 800 21px/1.05 var(--heading);
   color: var(--navy);
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
 }
 
 .brand-text small {
   display: block;
   margin-top: 5px;
   font: 800 10px var(--font);
-  letter-spacing: .19em;
+  letter-spacing: 0.19em;
 }
 
 .main-nav {
@@ -156,7 +170,6 @@ textarea {
 .nav-link {
   position: relative;
   padding: 10px 0;
-  font-size: 14px;
   color: #264768;
 }
 
@@ -173,7 +186,7 @@ textarea {
   width: 0;
   height: 2px;
   background: var(--blue);
-  transition: width .2s;
+  transition: width 0.2s ease;
 }
 
 .nav-link:hover::after,
@@ -183,11 +196,10 @@ textarea {
 
 .menu-toggle {
   display: none;
-  border: 0;
-  background: var(--blue);
-  border-radius: 8px;
   padding: 12px;
-  cursor: pointer;
+  border: 0;
+  border-radius: 8px;
+  background: var(--blue);
 }
 
 .menu-toggle span {
@@ -201,23 +213,22 @@ textarea {
 
 /* =========================================================
    04. BUTTONS & LINKS
-   ========================================================= */
+========================================================= */
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
+  padding: 17px 24px;
   background: var(--blue);
   color: var(--navy);
-  font-size: 14px;
-  font-weight: 800;
-  padding: 17px 24px;
   border: 0;
   border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 8px 22px rgba(255, 212, 0, .18);
-  transition: transform .2s, background .2s;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 8px 22px rgba(255, 212, 0, 0.18);
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .btn:hover {
@@ -232,7 +243,7 @@ textarea {
 .btn-dark {
   background: var(--navy);
   color: white;
-  box-shadow: 0 8px 22px rgba(8, 43, 89, .16);
+  box-shadow: 0 8px 22px rgba(8, 43, 89, 0.16);
 }
 
 .btn-dark:hover {
@@ -262,14 +273,14 @@ textarea {
   place-items: center;
   width: 38px;
   height: 38px;
-  border: 1px solid rgba(255, 255, 255, .4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
 }
 
 
 /* =========================================================
    05. HERO SECTION
-   ========================================================= */
+========================================================= */
 
 .hero {
   position: relative;
@@ -278,31 +289,19 @@ textarea {
   background:
     radial-gradient(
       ellipse at 85% 15%,
-      rgba(36, 111, 201, .45),
+      rgba(36, 111, 201, 0.45),
       transparent 42%
     ),
-    linear-gradient(
-      135deg,
-      #061d3d,
-      #0b3973 65%,
-      #082b59
-    );
+    linear-gradient(135deg, #061d3d, #0b3973 65%, #082b59);
 }
 
 .hero-grid {
   position: absolute;
   inset: 0;
-  opacity: .13;
+  opacity: 0.13;
   background-image:
-    linear-gradient(
-      rgba(255, 255, 255, .14) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, .14) 1px,
-      transparent 1px
-    );
+    linear-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(to right, transparent, black);
 }
@@ -310,11 +309,10 @@ textarea {
 .hero-content {
   position: relative;
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: 70px;
-  padding-top: 92px;
-  padding-bottom: 86px;
+  padding-block: 92px 86px;
 }
 
 .eyebrow {
@@ -324,11 +322,12 @@ textarea {
   color: #53729a;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: .15em;
+  letter-spacing: 0.15em;
 }
 
 .eyebrow-line {
   display: inline-block;
+  flex-shrink: 0;
   width: 28px;
   height: 2px;
   background: #c2a100;
@@ -348,7 +347,7 @@ textarea {
 .dark-band h2 {
   margin: 24px 0;
   font: 800 clamp(46px, 5.5vw, 76px)/1.08 var(--heading);
-  letter-spacing: -.055em;
+  letter-spacing: -0.055em;
 }
 
 .hero h1 em,
@@ -373,9 +372,6 @@ textarea {
   gap: 24px;
   margin-top: 30px;
 }
-
-
-/* Hero trust indicators */
 
 .hero-proof {
   display: flex;
@@ -419,30 +415,23 @@ textarea {
   font-size: 13px;
 }
 
-
-/* Hero image and floating cards */
-
 .hero-visual {
-  min-height: 490px;
   position: relative;
   display: flex;
   align-items: center;
+  min-height: 490px;
 }
 
 .visual-image {
   width: 100%;
   height: 430px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 22px;
   background:
-    linear-gradient(
-      180deg,
-      rgba(4, 24, 50, .05),
-      rgba(4, 24, 50, .25)
-    ),
+    linear-gradient(180deg, rgba(4, 24, 50, 0.05), rgba(4, 24, 50, 0.25)),
     url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=85')
-      center/cover;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, .28);
-  border: 1px solid rgba(255, 255, 255, .2);
+    center/cover;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
 }
 
 .image-label,
@@ -451,13 +440,13 @@ textarea {
   display: flex;
   align-items: center;
   gap: 13px;
-  border: 1px solid rgba(255, 255, 255, .55);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 12px;
-  background: rgba(241, 246, 255, .9);
+  background: rgba(241, 246, 255, 0.9);
   color: var(--navy);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 16px 40px rgba(0, 20, 50, .18);
+  box-shadow: 0 16px 40px rgba(0, 20, 50, 0.18);
 }
 
 .image-label {
@@ -500,11 +489,11 @@ textarea {
   gap: 10px;
   padding: 15px;
   border-radius: 12px;
-  background: rgba(255, 212, 0, .96);
+  background: rgba(255, 212, 0, 0.96);
   color: var(--navy);
   font-size: 10px;
   font-weight: 900;
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
   line-height: 1.5;
 }
 
@@ -519,12 +508,9 @@ textarea {
   right: -40px;
   width: 150px;
   height: 150px;
-  border: 1px solid rgba(255, 212, 0, .6);
+  border: 1px solid rgba(255, 212, 0, 0.6);
   border-radius: 50%;
 }
-
-
-/* Hero bottom strip */
 
 .hero-bottom {
   position: relative;
@@ -533,11 +519,11 @@ textarea {
   justify-content: space-between;
   gap: 20px;
   padding: 20px 0;
-  border-top: 1px solid rgba(255, 255, 255, .18);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
   color: #d5e4f9;
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
 }
 
 .hero-bottom i {
@@ -550,7 +536,7 @@ textarea {
 
 /* =========================================================
    06. TRUST STRIP
-   ========================================================= */
+========================================================= */
 
 .trust-strip {
   background: #e4efff;
@@ -568,7 +554,7 @@ textarea {
 .trust-inner > p {
   margin: 0;
   font-size: 12px;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 }
 
 .trust-inner strong {
@@ -586,16 +572,21 @@ textarea {
 
 
 /* =========================================================
-   07. GENERAL SECTION & ABOUT SECTION
-   ========================================================= */
+   07. SHARED SECTIONS & ABOUT
+========================================================= */
 
 .section {
   padding: 105px 0;
 }
 
+.section h2 {
+  font-size: clamp(38px, 4.5vw, 58px);
+  line-height: 1.15;
+}
+
 .about-layout {
   display: grid;
-  grid-template-columns: .9fr 1.1fr;
+  grid-template-columns: 0.9fr 1.1fr;
   align-items: center;
   gap: 90px;
 }
@@ -609,13 +600,9 @@ textarea {
   height: 450px;
   border-radius: 18px;
   background:
-    linear-gradient(
-      180deg,
-      rgba(8, 43, 89, .05),
-      rgba(8, 43, 89, .25)
-    ),
+    linear-gradient(180deg, rgba(8, 43, 89, 0.05), rgba(8, 43, 89, 0.25)),
     url('https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=1000&q=85')
-      center/cover;
+    center/cover;
   box-shadow: var(--shadow);
 }
 
@@ -646,11 +633,6 @@ textarea {
   font-size: 12px;
 }
 
-.section h2 {
-  font-size: clamp(38px, 4.5vw, 58px);
-  line-height: 1.15;
-}
-
 .section-copy h2 {
   margin-top: 22px;
 }
@@ -661,9 +643,6 @@ textarea {
   line-height: 1.9;
 }
 
-
-/* About feature list */
-
 .feature-list {
   display: grid;
   gap: 21px;
@@ -672,8 +651,8 @@ textarea {
 
 .feature {
   display: flex;
-  gap: 14px;
   align-items: flex-start;
+  gap: 14px;
 }
 
 .feature-check {
@@ -702,221 +681,316 @@ textarea {
 
 
 /* =========================================================
-   08. SERVICES SECTION & SERVICE CARDS
-   ========================================================= */
+   08. SERVICES SECTION & SHARED CARD DESIGN
+========================================================= */
 
 .services-section {
-  background: #e4efff;
+  position: relative;
+  padding: 100px 0;
+  background: var(--mint);
+  color: var(--ink);
+}
+
+.services-section .container {
+  max-width: 1200px;
 }
 
 .section-heading {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   gap: 45px;
   margin-bottom: 44px;
 }
 
 .section-heading h2 {
-  margin-bottom: 0;
+  margin: 12px 0 0;
   font-size: clamp(38px, 4.5vw, 58px);
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+.section-heading h2 em {
+  color: #a88600;
+  font-style: normal;
+}
+
+.services-section .section-heading .eyebrow {
+  margin-bottom: 18px;
+  color: var(--navy);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+.services-section .section-heading .eyebrow-line {
+  width: 32px;
+  height: 3px;
+  background: var(--blue);
+  border-radius: 5px;
 }
 
 .heading-side {
   max-width: 370px;
-  margin-bottom: 8px;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  align-items: stretch;
+  gap: 22px;
 }
 
 .service-card {
   position: relative;
-  min-height: 300px;
-  padding: 28px 23px;
-  background: rgba(255, 255, 255, .76);
-  border: 1px solid rgba(8, 43, 89, .12);
-  border-radius: 14px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 10px 28px rgba(8, 43, 89, .05);
-  transition: transform .25s, box-shadow .25s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 310px;
+  padding: 28px;
+  overflow: hidden;
+  background: #fffdf5;
+  border: 1px solid #eee8d8;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(20, 35, 50, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--blue);
+  transition: width 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow);
+  transform: translateY(-5px);
+  border-color: rgba(8, 43, 89, 0.2);
+  box-shadow: 0 14px 32px rgba(20, 35, 50, 0.12);
 }
 
-.service-card.featured {
-  background: linear-gradient(145deg, #082b59, #104783);
-  border: 1px solid rgba(255, 212, 0, .55);
-  color: white;
+.service-card:hover::before {
+  width: 100%;
 }
 
-.service-icon {
+.service-card .service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
   margin-bottom: 22px;
-  color: #b18b00;
-  font-size: 36px;
+  background: #fff0a8;
+  border: 1px solid rgba(255, 212, 0, 0.55);
+  border-radius: 16px;
+  font-size: 27px;
+  line-height: 1;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
-.featured .service-icon {
-  color: var(--blue);
+.service-card:hover .service-icon {
+  background: var(--blue);
+  transform: scale(1.05);
 }
 
-.service-no {
+.service-card .service-no {
   display: block;
   margin-bottom: 12px;
-  color: #7a8fa9;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: .12em;
-}
-
-.featured .service-no {
-  color: #d2e3fa;
+  color: #8796a8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
 }
 
 .service-card h3 {
   margin: 0 0 12px;
-  font: 800 20px var(--heading);
+  color: #193451;
+  font-family: var(--heading);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.4;
 }
 
 .service-card p {
   margin: 0;
-  padding-bottom: 30px;
-  color: var(--muted);
+  padding-bottom: 50px;
+  color: #71839a;
   font-size: 14px;
   line-height: 1.8;
 }
 
-.featured p {
-  color: #d4e3f8;
-}
+/* Standard service card arrow */
 
 .service-card > a {
   position: absolute;
-  right: 22px;
-  bottom: 22px;
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
+  right: 26px;
+  bottom: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--blue);
   border-radius: 50%;
   background: var(--blue);
   color: var(--navy);
-  font-size: 18px;
-  font-weight: 900;
+  font-size: 23px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-card > a:hover {
+  transform: rotate(45deg);
+  background: var(--navy);
+  color: white;
 }
 
 
 /* =========================================================
-   09. WORKSHOP CARD — CLICK TO REVEAL SERVICES
-   ========================================================= */
-
-.workshop-card {
-  min-width: 0;
-}
+   09. WORKSHOP CARD & EXPANDABLE SERVICES
+========================================================= */
 
 .workshop-trigger {
-  display: block;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
-  padding: 0;
+  padding: 0 0 45px;
   border: 0;
   background: transparent;
   color: inherit;
   font: inherit;
   text-align: left;
-  cursor: pointer;
 }
 
-.workshop-trigger .service-icon,
-.workshop-trigger .service-no {
-  display: block;
+.workshop-trigger .service-icon {
+  margin-bottom: 22px;
 }
 
-.workshop-trigger .workshop-title {
+.workshop-trigger .service-no,
+.workshop-trigger .workshop-title,
+.workshop-trigger .workshop-description {
   display: block;
-  margin: 0 0 12px;
-  font: 800 20px var(--heading);
+  width: 100%;
 }
 
 .workshop-trigger .workshop-description {
-  display: block;
-  padding-bottom: 12px;
+  padding: 0;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
 }
 
 .workshop-trigger .workshop-open-label {
   display: inline-block;
-  margin-top: 8px;
-  color: var(--navy, #082b59);
+  margin-top: 12px;
+  color: var(--navy);
   font-size: 12px;
   font-weight: 900;
-  letter-spacing: .02em;
 }
 
-.workshop-trigger:focus-visible {
-  outline: 3px solid var(--blue, #ffd400);
-  outline-offset: 5px;
-  border-radius: 6px;
+.workshop-enquire {
+  position: absolute;
+  z-index: 2;
+  right: 22px;
+  bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--blue);
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--navy);
+  font-size: 20px;
+  font-weight: 900;
+  text-decoration: none;
+  transition:
+    transform var(--transition),
+    color var(--transition),
+    background var(--transition);
+}
+
+.workshop-enquire:hover {
+  transform: rotate(45deg);
+  background: var(--navy);
+  color: white;
 }
 
 .workshop-service-list {
-  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-top: 20px;
   padding-top: 22px;
-  border-top: 1px solid var(--line, #d2e0f4);
-  animation: workshopReveal .22s ease-out;
+  border-top: 1px solid var(--line);
+  animation: workshopReveal 0.22s ease-out;
 }
 
 .workshop-service-list h3 {
   margin: 0 0 16px;
-  font: 800 20px var(--heading);
+  color: var(--navy);
+  font: 800 20px/1.4 var(--heading);
 }
 
-.workshop-service-list ol {
-  margin: 0 0 22px;
+.workshop-service-list ol,
+.workshop-service-group ol {
+  margin: 0;
   padding-left: 25px;
 }
 
-.workshop-service-list li {
-  padding: 9px 0;
-  border-bottom: 1px solid var(--line, #d2e0f4);
-  color: var(--ink, #082b59);
+.workshop-service-list li,
+.workshop-service-group li {
+  padding: 9px 4px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
   font-size: 14px;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
-.workshop-enquire {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  border-radius: 7px;
-  background: var(--navy, #082b59);
-  color: #fff;
-  font-size: 13px;
+.workshop-service-list li::marker,
+.workshop-service-group li::marker {
+  color: var(--navy);
   font-weight: 800;
-  text-decoration: none;
-  transition: transform .2s, background .2s;
-}
-
-.workshop-enquire:hover {
-  transform: translateY(-2px);
-  background: var(--navy-2, #104783);
 }
 
 .workshop-service-list[hidden] {
   display: none !important;
 }
 
+.workshop-service-group {
+  margin-top: 22px;
+}
 
-/* Workshop reveal animation */
+.workshop-service-group h4 {
+  margin: 0 0 9px;
+  color: var(--navy);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 800;
+}
 
 @keyframes workshopReveal {
   from {
@@ -931,40 +1005,9 @@ textarea {
 }
 
 
-/* Workshop service categories */
-
-.workshop-service-group {
-  margin-top: 22px;
-}
-
-.workshop-service-group h4 {
-  margin: 0 0 9px;
-  color: var(--navy, #082b59);
-  font-size: .9rem;
-  line-height: 1.5;
-  font-weight: 800;
-}
-
-.workshop-service-group ol {
-  margin: 0;
-  padding-left: 28px;
-}
-
-.workshop-service-group li {
-  padding: 8px 4px;
-  border-bottom: 1px solid var(--line, #d2e0f4);
-  line-height: 1.55;
-}
-
-.workshop-service-group li::marker {
-  color: var(--navy, #082b59);
-  font-weight: 700;
-}
-
-
 /* =========================================================
-   10. DARK BAND / CALL-TO-ACTION SECTION
-   ========================================================= */
+   10. DARK BAND / CALL TO ACTION
+========================================================= */
 
 .dark-band {
   background: linear-gradient(120deg, #d8e8ff, #f5f8ff);
@@ -981,14 +1024,14 @@ textarea {
 
 .dark-band h2 {
   margin: 18px 0 0;
-  font-size: clamp(38px, 4.5vw, 58px);
   color: var(--navy);
+  font-size: clamp(38px, 4.5vw, 58px);
 }
 
 
 /* =========================================================
-   11. PROJECTS / GALLERY SECTION
-   ========================================================= */
+   11. PROJECTS / GALLERY
+========================================================= */
 
 .projects-section {
   background: var(--cream);
@@ -1002,55 +1045,49 @@ textarea {
 
 .project-card {
   overflow: hidden;
-  background: rgba(255, 255, 255, .78);
+  background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--line);
   border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(8, 43, 89, .05);
+  box-shadow: 0 10px 30px rgba(8, 43, 89, 0.05);
 }
 
 .project-art {
-  min-height: 220px;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
+  min-height: 220px;
   padding: 20px;
   border-radius: 14px 14px 0 0;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
 }
 
 .project-art span {
   padding: 8px 10px;
   border-radius: 5px;
-  background: rgba(255, 212, 0, .94);
+  background: rgba(255, 212, 0, 0.94);
   color: var(--navy);
   font-size: 10px;
   font-weight: 900;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
-
-
-/* Individual project images */
 
 .art-one {
   background-image:
-    linear-gradient(0deg, rgba(5, 24, 50, .35), transparent),
+    linear-gradient(0deg, rgba(5, 24, 50, 0.35), transparent),
     url('https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=800&q=80');
 }
 
 .art-two {
   background-image:
-    linear-gradient(0deg, rgba(5, 24, 50, .35), transparent),
+    linear-gradient(0deg, rgba(5, 24, 50, 0.35), transparent),
     url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80');
 }
 
 .art-three {
   background-image:
-    linear-gradient(0deg, rgba(5, 24, 50, .35), transparent),
+    linear-gradient(0deg, rgba(5, 24, 50, 0.35), transparent),
     url('https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&w=800&q=80');
 }
-
-
-/* Project card content */
 
 .project-info {
   display: flex;
@@ -1086,7 +1123,7 @@ textarea {
 
 /* =========================================================
    12. CONTACT SECTION
-   ========================================================= */
+========================================================= */
 
 .contact-section {
   padding: 100px 0;
@@ -1094,7 +1131,7 @@ textarea {
   background:
     radial-gradient(
       ellipse at 90% 10%,
-      rgba(35, 105, 190, .38),
+      rgba(35, 105, 190, 0.38),
       transparent 42%
     ),
     linear-gradient(135deg, #061d3d, #082b59);
@@ -1102,9 +1139,9 @@ textarea {
 
 .contact-layout {
   display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 80px;
+  grid-template-columns: 0.85fr 1.15fr;
   align-items: center;
+  gap: 80px;
 }
 
 .contact-copy h2 {
@@ -1117,9 +1154,6 @@ textarea {
   line-height: 1.9;
 }
 
-
-/* Contact details */
-
 .contact-detail {
   display: flex;
   align-items: flex-start;
@@ -1130,11 +1164,11 @@ textarea {
 .contact-detail > span {
   display: grid;
   place-items: center;
+  flex-shrink: 0;
   width: 42px;
   height: 42px;
-  flex-shrink: 0;
   border-radius: 9px;
-  background: rgba(255, 212, 0, .13);
+  background: rgba(255, 212, 0, 0.13);
   color: var(--blue);
   font-size: 22px;
 }
@@ -1145,7 +1179,7 @@ textarea {
   color: #a8c4e8;
   font-size: 11px;
   font-weight: 900;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
 }
 
 .contact-detail a,
@@ -1159,15 +1193,15 @@ textarea {
 
 /* =========================================================
    13. CONTACT FORM
-   ========================================================= */
+========================================================= */
 
 .contact-form {
   padding: 38px;
-  background: rgba(255, 255, 255, .95);
+  background: rgba(255, 255, 255, 0.95);
   color: var(--navy);
-  border: 1px solid rgba(255, 255, 255, .6);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 16px;
-  box-shadow: 0 20px 55px rgba(0, 10, 35, .2);
+  box-shadow: 0 20px 55px rgba(0, 10, 35, 0.2);
 }
 
 .form-heading h3 {
@@ -1202,24 +1236,24 @@ textarea {
   width: 100%;
   margin-top: 8px;
   padding: 14px;
-  border: 1px solid #d2e0f4;
+  border: 1px solid var(--line);
   border-radius: 8px;
   outline: 0;
-  background: rgba(241, 246, 255, .75);
+  background: rgba(241, 246, 255, 0.75);
   color: var(--navy);
   font-size: 14px;
 }
 
 .contact-form textarea {
-  resize: vertical;
   min-height: 120px;
+  resize: vertical;
 }
 
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
   border-color: #1768c4;
-  box-shadow: 0 0 0 3px rgba(23, 104, 196, .12);
+  box-shadow: 0 0 0 3px rgba(23, 104, 196, 0.12);
 }
 
 .submit-btn {
@@ -1241,7 +1275,7 @@ textarea {
 
 /* =========================================================
    14. FOOTER
-   ========================================================= */
+========================================================= */
 
 .footer {
   background: #04172f;
@@ -1284,7 +1318,7 @@ textarea {
   justify-content: space-between;
   gap: 20px;
   padding-block: 20px;
-  border-top: 1px solid rgba(255, 255, 255, .13);
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
   color: #9db4d2;
   font-size: 11px;
 }
@@ -1292,7 +1326,7 @@ textarea {
 
 /* =========================================================
    15. THEME SWITCHER & LANGUAGE OPTIONS
-   ========================================================= */
+========================================================= */
 
 .site-options {
   display: flex;
@@ -1306,10 +1340,10 @@ textarea {
 .site-options select {
   min-height: 36px;
   padding: 8px 10px;
-  border: 1px solid rgba(255, 212, 0, .75);
+  border: 1px solid rgba(255, 212, 0, 0.75);
   border-radius: 8px;
   background: var(--navy);
-  color: #fff;
+  color: white;
   font-size: 12px;
   font-weight: 800;
   cursor: pointer;
@@ -1327,14 +1361,10 @@ textarea {
   border: 0;
 }
 
-.site-options select {
-  background: var(--navy);
-}
-
 
 /* =========================================================
-   16. DARK THEME
-   ========================================================= */
+   16. DARK THEME — CONSOLIDATED
+========================================================= */
 
 body.dark-theme {
   --cream: #07111f;
@@ -1351,7 +1381,7 @@ body.dark-theme {
 }
 
 body.dark-theme .site-header {
-  background: rgba(7, 17, 31, .94);
+  background: rgba(7, 17, 31, 0.96);
   border-bottom-color: #263a52;
 }
 
@@ -1369,10 +1399,25 @@ body.dark-theme .services-section {
 }
 
 body.dark-theme .trust-inner strong {
-  color: #ffd400;
+  color: var(--blue);
 }
 
-body.dark-theme .service-card {
+body.dark-theme .section-heading h2,
+body.dark-theme .services-section .section-heading .eyebrow,
+body.dark-theme .dark-band h2 {
+  color: #edf4ff;
+}
+
+body.dark-theme .section-heading h2 em {
+  color: var(--blue);
+}
+
+body.dark-theme .heading-side {
+  color: #b6c5d9;
+}
+
+body.dark-theme .service-card,
+body.dark-theme .workshop-card {
   background: #101f32;
   border-color: #263a52;
   color: #edf4ff;
@@ -1382,31 +1427,40 @@ body.dark-theme .service-card.featured {
   background: linear-gradient(145deg, #0b2847, #123a60);
 }
 
+body.dark-theme .service-card h3,
+body.dark-theme .workshop-title,
+body.dark-theme .workshop-service-list h3,
+body.dark-theme .workshop-service-group h4 {
+  color: #edf4ff;
+}
+
 body.dark-theme .service-card p,
 body.dark-theme .workshop-trigger .workshop-description {
   color: #b6c5d9;
 }
 
-body.dark-theme .workshop-trigger .workshop-open-label {
-  color: #ffd400;
+body.dark-theme .service-card .service-no {
+  color: #a9bacb;
 }
 
-body.dark-theme .workshop-service-list li {
-  color: #e5eefb;
+body.dark-theme .workshop-trigger .workshop-open-label {
+  color: var(--blue);
+}
+
+body.dark-theme .workshop-service-list,
+body.dark-theme .workshop-service-group {
   border-color: #263a52;
 }
 
-body.dark-theme .workshop-service-group h4 {
-  color: #ffd400;
+body.dark-theme .workshop-service-list li,
+body.dark-theme .workshop-service-group li {
+  color: #e5eefb;
+  border-color: #263a52;
 }
 
 body.dark-theme .dark-band {
   background: linear-gradient(120deg, #101f32, #0a1727);
   border-color: #263a52;
-}
-
-body.dark-theme .dark-band h2 {
-  color: #edf4ff;
 }
 
 body.dark-theme .contact-form {
@@ -1442,27 +1496,39 @@ body.dark-theme .footer {
 }
 
 body.dark-theme .main-nav {
-  background: rgba(7, 17, 31, .98);
+  background: rgba(7, 17, 31, 0.98);
+}
+
+body.dark-theme .site-options button,
+body.dark-theme .site-options select {
+  background: #101f32;
+  color: #edf4ff;
 }
 
 
 /* =========================================================
    17. KEYBOARD ACCESSIBILITY
-   ========================================================= */
+========================================================= */
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #ffd400;
+  outline: 3px solid var(--blue);
   outline-offset: 3px;
+}
+
+.workshop-trigger:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 5px;
+  border-radius: 6px;
 }
 
 
 /* =========================================================
-   18. RESPONSIVE DESIGN — TABLETS
-   ========================================================= */
+   18. TABLET RESPONSIVE DESIGN
+========================================================= */
 
 @media (max-width: 950px) {
   .main-nav {
@@ -1482,8 +1548,18 @@ textarea:focus-visible {
     gap: 45px;
   }
 
-  .section {
+  .section,
+  .services-section {
     padding: 80px 0;
+  }
+
+  .service-grid,
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-card {
+    min-height: 300px;
   }
 
   .site-options {
@@ -1493,34 +1569,34 @@ textarea:focus-visible {
 
 
 /* =========================================================
-   19. RESPONSIVE DESIGN — MOBILE
-   ========================================================= */
+   19. MOBILE RESPONSIVE DESIGN
+========================================================= */
 
 @media (max-width: 700px) {
   .container {
     width: calc(100% - 32px);
   }
 
-  /* Top bar */
+  /* Top information bar */
 
   .topbar-inner {
     justify-content: center;
-    text-align: center;
     padding-block: 9px;
+    text-align: center;
   }
 
   .topbar-inner > span {
     display: none;
   }
 
-  /* Header and mobile navigation */
+  /* Header and navigation */
 
   .nav-wrap {
-    min-height: 72px;
     position: relative;
+    min-height: 72px;
     flex-wrap: wrap;
-    padding-block: 10px;
     gap: 10px;
+    padding-block: 10px;
   }
 
   .brand-text {
@@ -1551,18 +1627,19 @@ textarea:focus-visible {
 
   .main-nav {
     position: absolute;
-    display: none;
     top: 100%;
     left: 0;
     right: 0;
-    padding: 15px 24px 22px;
-    background: rgba(241, 246, 255, .98);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid var(--line);
-    box-shadow: 0 18px 25px rgba(8, 43, 89, .1);
+    z-index: 60;
+    display: none;
     align-items: stretch;
     flex-direction: column;
     gap: 4px;
+    padding: 15px 24px 22px;
+    background: rgba(241, 246, 255, 0.98);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 18px 25px rgba(8, 43, 89, 0.1);
   }
 
   .main-nav.is-open {
@@ -1584,8 +1661,7 @@ textarea:focus-visible {
   .hero-content {
     grid-template-columns: 1fr;
     gap: 38px;
-    padding-top: 64px;
-    padding-bottom: 55px;
+    padding-block: 64px 55px;
   }
 
   .hero h1 {
@@ -1598,7 +1674,7 @@ textarea:focus-visible {
 
   .hero-visual {
     min-height: 330px;
-    margin: 0 8px;
+    margin-inline: 8px;
   }
 
   .visual-image {
@@ -1612,13 +1688,13 @@ textarea:focus-visible {
   }
 
   .visual-badge {
-    right: -8px;
     top: 5px;
+    right: -8px;
   }
 
   .circle-outline {
-    right: -15px;
     top: 18px;
+    right: -15px;
     width: 100px;
     height: 100px;
   }
@@ -1626,11 +1702,11 @@ textarea:focus-visible {
   .hero-bottom {
     flex-wrap: wrap;
     justify-content: center;
-    padding: 18px 0;
+    padding-block: 18px;
     font-size: 9px;
   }
 
-  /* Trust strip */
+  /* Shared mobile layouts */
 
   .trust-inner,
   .section-heading,
@@ -1645,9 +1721,11 @@ textarea:focus-visible {
     gap: 12px;
   }
 
-  /* General sections */
+  /* About and general sections */
 
-  .section {
+  .section,
+  .services-section,
+  .contact-section {
     padding: 68px 0;
   }
 
@@ -1676,28 +1754,68 @@ textarea:focus-visible {
     font-size: clamp(36px, 9vw, 46px);
   }
 
-  /* Service and project cards */
+  /* Services and gallery */
+
+  .section-heading {
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+
+  .heading-side {
+    max-width: 100%;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
 
   .service-grid,
   .project-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
-  .service-card {
-    min-height: auto;
+  .service-card,
+  .workshop-card {
+    min-height: 280px;
     padding: 25px;
   }
 
-  .service-card h3 {
+  .service-card .service-icon {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .service-card h3,
+  .workshop-title {
     font-size: 20px;
   }
 
-  .service-card p {
+  .service-card p,
+  .workshop-description {
     font-size: 14px;
-    padding-bottom: 18px;
   }
 
-  /* CTA */
+  .service-card > a {
+    right: 25px;
+    bottom: 25px;
+  }
+
+  .workshop-enquire {
+    right: 25px;
+    bottom: 25px;
+  }
+
+  .workshop-service-group h4 {
+    font-size: 13px;
+  }
+
+  .workshop-service-group li,
+  .workshop-service-list li {
+    font-size: 13px;
+  }
+
+  /* Call to action */
 
   .dark-band-inner {
     gap: 25px;
@@ -1705,10 +1823,6 @@ textarea:focus-visible {
   }
 
   /* Contact form */
-
-  .contact-section {
-    padding: 68px 0;
-  }
 
   .contact-copy h2 {
     font-size: clamp(40px, 10vw, 54px);
@@ -1720,10 +1834,6 @@ textarea:focus-visible {
 
   .form-heading h3 {
     font-size: 23px;
-  }
-
-  .contact-form label {
-    font-size: 13px;
   }
 
   .contact-form input,
@@ -1742,52 +1852,12 @@ textarea:focus-visible {
   .footer-main {
     gap: 18px;
   }
-
-  /* Workshop */
-
-  .workshop-service-group h4 {
-    font-size: .85rem;
-  }
-
-  .workshop-service-group li {
-    font-size: .9rem;
-  }
-
-  .workshop-service-list li {
-    font-size: 13px;
-  }
-
-  .workshop-enquire {
-    width: 100%;
-    justify-content: center;
-  }
 }
 
 
 /* =========================================================
    20. SMALL MOBILE DEVICES
-   ========================================================= */
-
-@media (max-width: 600px) {
-  .workshop-service-group h4 {
-    font-size: .85rem;
-  }
-
-  .workshop-service-group li {
-    font-size: .9rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .workshop-service-list li {
-    font-size: 13px;
-  }
-
-  .workshop-enquire {
-    width: 100%;
-    justify-content: center;
-  }
-}
+========================================================= */
 
 @media (max-width: 360px) {
   .site-options {
@@ -1799,12 +1869,23 @@ textarea:focus-visible {
     padding: 7px 8px;
     font-size: 11px;
   }
+
+  .service-card,
+  .workshop-card {
+    padding: 20px;
+  }
+
+  .service-card > a,
+  .workshop-enquire {
+    right: 20px;
+    bottom: 20px;
+  }
 }
 
 
 /* =========================================================
    21. REDUCED MOTION ACCESSIBILITY
-   ========================================================= */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -1814,7 +1895,9 @@ textarea:focus-visible {
   *,
   *::before,
   *::after {
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
